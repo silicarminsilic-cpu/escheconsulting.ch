@@ -1212,6 +1212,10 @@ body{
         </div>
 
         <form id="contactForm" novalidate>
+          <input type="hidden" name="access_key" value="98f35e86-beec-44a0-a737-5442c6658b4b">
+          <input type="hidden" name="subject" value="Neue Anfrage über escheconsulting.ch">
+          <input type="hidden" name="from_name" value="Esche Consulting Website">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <input id="cf-name" name="name" required placeholder="Vorname & Nachname" aria-label="Vorname & Nachname">
           <input id="cf-company" name="company" required placeholder="Unternehmen" aria-label="Unternehmen">
           <input id="cf-email" name="email" type="email" required placeholder="E-Mail" aria-label="E-Mail">
@@ -1575,10 +1579,31 @@ body{
     const eta = isPriority ? 'innerhalb von 24 Stunden' : 'innerhalb von 2 Werktagen';
     const serviceLine = service ? ` zum Thema „${service}“` : '';
 
-    msg.innerText = `Danke, ${firstName}! Wir melden uns ${eta} persönlich${serviceLine}.`;
     submitBtn.disabled = true;
     submitBtn.style.opacity = '.6';
-    submitBtn.style.cursor = 'default';
+    submitBtn.style.cursor = 'wait';
+    msg.innerText = 'Wird gesendet …';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        submitBtn.style.cursor = 'default';
+        msg.innerText = `Danke, ${firstName}! Wir melden uns ${eta} persönlich${serviceLine}.`;
+      } else {
+        throw new Error(data.message || 'Unbekannter Fehler');
+      }
+    })
+    .catch(() => {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.style.cursor = 'pointer';
+      msg.innerText = 'Da ist leider etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt eine E-Mail.';
+    });
   });
 })();
 </script>
