@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZZG83CK');</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WC3CD5KFZ"></script>
 <script>
@@ -11,13 +18,6 @@
   gtag('js', new Date());
   gtag('config', 'G-9WC3CD5KFZ');
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WZZG83CK');</script>
-<!-- End Google Tag Manager -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 <title>Esche Consulting GmbH – Digitale Unternehmensentwicklung aus Liechtenstein</title>
 <meta name="description" content="Esche Consulting GmbH entwickelt digitale Strukturen fuer Unternehmen in der Schweiz, Deutschland, Oesterreich und Liechtenstein: CRM, Prozessautomatisierung, Positionierung und individuelle Softwareloesungen.">
@@ -184,21 +184,23 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
   mask-image:radial-gradient(circle at 50% 30%,rgba(0,0,0,.9),transparent 70%);
   -webkit-mask-image:radial-gradient(circle at 50% 30%,rgba(0,0,0,.9),transparent 70%);
 }
-.hero-network{position:absolute;inset:0;z-index:0;opacity:.55}
+.hero-network{position:absolute;inset:0;z-index:0;opacity:.65}
 .hero-network svg{width:100%;height:100%}
-.hero-network .ln{fill:none;stroke:rgba(255,255,255,.14);stroke-width:1}
-.hero-network .ln.gold{stroke:rgba(179,154,112,.4)}
-.hero-network .nd{fill:rgba(255,255,255,.25)}
+.hero-network .ln{fill:none;stroke:rgba(255,255,255,.16);stroke-width:1}
+.hero-network .ln.gold{stroke:rgba(179,154,112,.46)}
+.hero-network .nd{fill:rgba(255,255,255,.28)}
 .hero-network .nd.gold{fill:var(--gold)}
 .hero-network .pulse{animation:netPulse 4s ease-in-out infinite}
 @keyframes netPulse{0%,100%{opacity:.4}50%{opacity:1}}
-.hero-network .ln.dash{stroke-dasharray:3 11;animation:heroDash 14s linear infinite}
+.hero-network .ln.dash{stroke-dasharray:3 11;animation:heroDash 10s linear infinite}
 @keyframes heroDash{to{stroke-dashoffset:-280}}
 .hero-network .nd-ring{fill:none;stroke:var(--gold);stroke-width:1;opacity:0;animation:heroRing 3.2s ease-out infinite}
 @keyframes heroRing{0%{r:4;opacity:.75}100%{r:34;opacity:0}}
+.hero-network .nd-spark{fill:var(--gold-light);filter:drop-shadow(0 0 6px rgba(179,154,112,.9))}
 @media(prefers-reduced-motion:reduce){
   .hero-network .ln.dash{animation:none}
   .hero-network .nd-ring{animation:none;opacity:0}
+  .hero-network .nd-spark{display:none}
 }
 .hero-inner{position:relative;z-index:2;width:100%;text-align:center}
 .hero .eyebrow{justify-content:center;margin:0 auto 28px}
@@ -207,23 +209,35 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
 .hero h1 em{font-style:italic;color:var(--gold-light)}
 .hero .lede{max-width:680px;margin:20px auto 0}
 .hero-location{
-  margin-top:18px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  margin-top:14px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
   color:rgba(255,255,255,.5);font-weight:600;
 }
 .hero-statement{
-  margin:18px auto 0;max-width:620px;font-family:var(--serif);font-style:italic;
-  font-size:clamp(15px,1.6vw,19px);line-height:1.45;color:var(--gold-light);
-  letter-spacing:.005em;position:relative;
+  margin:38px auto 0;max-width:640px;font-family:var(--serif);font-style:italic;
+  font-size:clamp(17px,1.9vw,22px);line-height:1.5;color:var(--gold-light);
+  letter-spacing:.01em;position:relative;padding:2px 0 2px 28px;text-align:left;
+  display:inline-block;
+}
+.hero-statement-bar{
+  position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--gold),rgba(179,154,112,.08));
+  transform-origin:top;transform:scaleY(0);
+  animation:heroBarGrow 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:.6s;
 }
 .hero-statement-mark{
-  display:block;font-style:normal;font-family:Georgia,serif;font-size:26px;
-  line-height:1;color:var(--gold);opacity:.55;margin-bottom:0;
+  position:absolute;left:14px;top:-22px;font-style:normal;font-family:Georgia,serif;
+  font-size:42px;line-height:1;color:var(--gold);opacity:.22;pointer-events:none;
 }
-.hero-actions{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:26px}
+.hero-statement-text{position:relative;z-index:1;display:block}
+@keyframes heroBarGrow{to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){
+  .hero-statement-bar{animation:none;transform:scaleY(1)}
+}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:34px}
 .hero-tertiary{margin-top:14px}
 
 .hero-flow{
-  margin-top:28px;display:flex;align-items:center;justify-content:center;
+  margin-top:24px;display:flex;align-items:center;justify-content:center;
   gap:0;flex-wrap:wrap;max-width:760px;margin-left:auto;margin-right:auto;
 }
 .hero-flow-step{
@@ -247,24 +261,27 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
 .hero-scroll-cue .line{width:1px;height:34px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollCue 2.2s ease-in-out infinite}
 @keyframes scrollCue{0%{opacity:0;transform:scaleY(.3);transform-origin:top}50%{opacity:1;transform:scaleY(1);transform-origin:top}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
 
-/* ---------- Product preview (3D system mockup) ---------- */
+/* ---------- Product preview (3D system mockup, now inside the hero) ---------- */
 .product-vis{padding-top:110px;padding-bottom:130px}
-.pv-glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:.5;z-index:0}
-.pv-glow-a{width:560px;height:560px;left:-160px;top:-120px;background:radial-gradient(circle,rgba(179,154,112,.4),transparent 70%);animation:pvGlowDrift 22s ease-in-out infinite}
-.pv-glow-b{width:480px;height:480px;right:-140px;bottom:-140px;background:radial-gradient(circle,rgba(159,178,214,.22),transparent 70%);animation:pvGlowDrift 26s ease-in-out infinite reverse}
-@keyframes pvGlowDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,-5%) scale(1.08)}}
+.pv-glow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;opacity:.6;z-index:0}
+.pv-glow-a{width:640px;height:640px;left:-180px;top:-140px;background:radial-gradient(circle,rgba(179,154,112,.48),transparent 70%);animation:pvGlowDrift 18s ease-in-out infinite}
+.pv-glow-b{width:560px;height:560px;right:-160px;bottom:-160px;background:radial-gradient(circle,rgba(159,178,214,.28),transparent 70%);animation:pvGlowDrift 22s ease-in-out infinite reverse}
+@keyframes pvGlowDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,-6%) scale(1.12)}}
 
 .pv-stage{
-  margin:72px auto 0;position:relative;display:flex;align-items:center;justify-content:center;
-  min-height:440px;perspective:1050px;max-width:740px;
+  margin:84px auto 0;position:relative;display:flex;align-items:center;justify-content:center;
+  min-height:460px;perspective:1200px;max-width:740px;
+}
+.pv-parallax{
+  position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;
 }
 .pv-laptop{
   width:min(100%,680px);position:relative;transform-style:preserve-3d;
-  transform:rotateX(16deg) rotateY(-26deg) rotateZ(1deg);animation:pvFloatLaptop 7.5s ease-in-out infinite;
+  transform:rotateX(18deg) rotateY(-28deg) rotateZ(1deg);animation:pvFloatLaptop 6.5s ease-in-out infinite;
 }
 @keyframes pvFloatLaptop{
-  0%,100%{transform:rotateX(16deg) rotateY(-26deg) rotateZ(1deg) translateY(0)}
-  50%{transform:rotateX(10deg) rotateY(-17deg) rotateZ(1deg) translateY(-16px)}
+  0%,100%{transform:rotateX(18deg) rotateY(-28deg) rotateZ(1deg) translateY(0)}
+  50%{transform:rotateX(9deg) rotateY(-15deg) rotateZ(1deg) translateY(-22px)}
 }
 .pv-laptop-screen{
   background:var(--navy-deep);border:1px solid rgba(255,255,255,.1);border-radius:18px 18px 8px 8px;
@@ -278,18 +295,30 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
 .pv-screen-topbar{display:flex;align-items:center;gap:7px;padding-bottom:13px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
 .pv-screen-topbar span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)}
 .pv-screen-title{margin-left:8px;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4)}
-.pv-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.pv-kpi{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
-.pv-kpi-label{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-.pv-spark{width:100%;height:26px;margin-top:8px;overflow:visible}
+.pv-live-badge{
+  margin-left:10px;display:inline-flex;align-items:center;gap:5px;font-size:9px;font-style:normal;
+  letter-spacing:.08em;text-transform:uppercase;color:#8fd19e;background:rgba(143,209,158,.12);
+  padding:3px 9px;border-radius:999px;flex-shrink:0;
+}
+.pv-live-badge i{width:5px;height:5px;border-radius:50%;background:#8fd19e;animation:netPulse 1.8s ease-in-out infinite;flex-shrink:0}
+.pv-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.pv-kpi{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 11px}
+.pv-kpi-label{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.pv-kpi-value{display:flex;align-items:baseline;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pv-count{font-family:var(--serif);font-size:19px;color:#fff;font-weight:600;letter-spacing:-.01em;font-style:normal}
+.pv-kpi-trend{font-style:normal;font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:999px;white-space:nowrap}
+.pv-kpi-trend.up{color:#8fd19e;background:rgba(143,209,158,.12)}
+.pv-spark{width:100%;height:22px;margin-top:8px;overflow:visible}
 .pv-spark path{fill:none;stroke:var(--gold-light);stroke-width:2;stroke-linecap:round;stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1)}
 .pv-stage.visible .pv-spark path{stroke-dashoffset:0}
-.pv-chart-wrap{margin-top:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 16px 8px}
-.pv-chart-label-row{display:flex;justify-content:flex-end;gap:16px;font-size:10.5px;color:rgba(255,255,255,.45);margin-bottom:6px}
+.pv-chart-wrap{margin-top:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 16px 10px;position:relative}
+.pv-chart-label-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:10.5px;color:rgba(255,255,255,.45);margin-bottom:6px}
+.pv-chart-legend{display:flex;gap:16px;flex-shrink:0}
 .pv-dotkey{display:inline-block;width:7px;height:7px;border-radius:50%;background:#9DB2D6;margin-right:6px}
 .pv-dotkey.gold{background:var(--gold)}
 .pv-chart{width:100%;height:auto;display:block}
 .pv-grid line{stroke:rgba(255,255,255,.06);stroke-width:1}
+.pv-chart-axis text{font-size:8px;fill:rgba(255,255,255,.28);font-family:var(--sans)}
 .pv-line{stroke-width:2.4;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 1.9s cubic-bezier(.2,.8,.2,1) .25s}
 .pv-stage.visible .pv-line{stroke-dashoffset:0}
 .pv-line-soft{stroke:#9DB2D6}
@@ -297,21 +326,37 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
 .pv-area{opacity:0;transition:opacity 1.2s ease 1.1s}
 .pv-stage.visible .pv-area{opacity:1}
 .pv-dot{fill:var(--gold);opacity:0;transition:opacity .4s ease 1.9s}
-.pv-stage.visible .pv-dot{opacity:1}
+.pv-stage.visible .pv-dot{opacity:1;animation:pvDotPulse 2.2s ease-in-out 2s infinite}
+@keyframes pvDotPulse{0%,100%{r:4.5}50%{r:6.5}}
+.pv-chart-callout{
+  font-size:10px;font-weight:600;color:#8fd19e;flex-shrink:0;
+  background:rgba(143,209,158,.12);padding:4px 10px;border-radius:999px;opacity:0;
+  transform:translateY(-4px);transition:opacity .5s ease 2.1s,transform .5s ease 2.1s;white-space:nowrap;
+}
+.pv-stage.visible .pv-chart-callout{opacity:1;transform:none}
 .pv-rows{margin-top:14px;display:flex;flex-direction:column;gap:9px}
 .pv-row{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,.55)}
 .pv-row-dot{width:6px;height:6px;border-radius:50%;background:#9DB2D6;flex-shrink:0}
 .pv-row-dot.gold{background:var(--gold)}
+@media(max-width:900px){
+  .pv-kpi-row{grid-template-columns:repeat(3,1fr)}
+  .pv-kpi:nth-child(4){display:none}
+  .pv-chart-callout{font-size:9px;padding:3px 8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pv-live-badge i{animation:none}
+  .pv-stage.visible .pv-dot{animation:none}
+}
 
 .pv-phone{
-  position:absolute;right:-34px;bottom:-28px;width:172px;z-index:2;
+  position:absolute;right:-34px;bottom:-28px;width:172px;z-index:3;
   background:var(--navy-deep);border:1px solid rgba(255,255,255,.12);border-radius:26px;
-  padding:9px;box-shadow:0 40px 90px rgba(0,0,0,.45);transform-style:preserve-3d;
-  transform:translateZ(90px) rotateY(16deg) rotateX(4deg);animation:pvFloatPhone 8.5s ease-in-out infinite;
+  padding:9px;box-shadow:0 30px 70px rgba(0,0,0,.5);
+  transform:rotateY(9deg) rotateX(2deg);animation:pvFloatPhone 8.5s ease-in-out infinite;
 }
 @keyframes pvFloatPhone{
-  0%,100%{transform:translateZ(90px) rotateY(16deg) rotateX(4deg) translateY(0)}
-  50%{transform:translateZ(105px) rotateY(10deg) rotateX(2deg) translateY(-12px)}
+  0%,100%{transform:rotateY(9deg) rotateX(2deg) translateY(0)}
+  50%{transform:rotateY(6deg) rotateX(1deg) translateY(-10px)}
 }
 .pv-phone-notch{width:48px;height:12px;background:var(--navy-deep);border-radius:0 0 10px 10px;position:absolute;top:9px;left:50%;transform:translateX(-50%);z-index:2}
 .pv-phone-screen{background:#0E1826;border-radius:19px;padding:22px 11px 12px;border:1px solid rgba(255,255,255,.06)}
@@ -330,12 +375,16 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
 .pv-caption{margin-top:40px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.35);letter-spacing:.03em}
 
 @media(max-width:900px){
-  .pv-stage{min-height:0;perspective:none;flex-direction:column;max-width:420px}
+  .pv-stage{min-height:0;perspective:none;max-width:420px}
+  .pv-parallax{flex-direction:column;transform:none!important}
   .pv-laptop{width:100%;max-width:100%;transform:none;animation:none}
   .pv-phone{position:relative;right:auto;bottom:auto;width:150px;margin:-34px auto 0;transform:none;animation:none}
 }
 @media(prefers-reduced-motion:reduce){
-  .pv-glow,.pv-laptop,.pv-phone{animation:none}
+  .pv-glow,.pv-laptop,.pv-phone,.pv-parallax{animation:none;transition:none;transform:none!important}
+}
+@media(hover:none),(pointer:coarse){
+  .pv-parallax{transform:none!important}
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -370,6 +419,17 @@ nav{height:82px;display:flex;align-items:center;justify-content:space-between}
   transform:scaleX(0);transform-origin:left;transition:transform .5s ease;
 }
 .ansatz-card:hover:before{transform:scaleX(1)}
+.ansatz-card.reveal{
+  transition:opacity .75s cubic-bezier(.16,.84,.44,1),transform .75s cubic-bezier(.16,.84,.44,1),box-shadow .4s;
+  transform:translateY(46px) scale(.93);
+}
+.ansatz-card.reveal.visible{transform:translateY(0) scale(1)}
+.ansatz-grid.reveal-stagger .ansatz-card:nth-child(1){transition-delay:0s}
+.ansatz-grid.reveal-stagger .ansatz-card:nth-child(2){transition-delay:.18s}
+.ansatz-grid.reveal-stagger .ansatz-card:nth-child(3){transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){
+  .ansatz-card.reveal{transform:none}
+}
 @media(max-width:900px){.ansatz-grid{grid-template-columns:1fr;gap:20px}.ansatz-wrap .flow-h{display:none}}
 
 /* ---------- Leistungen (asymmetric grid) ---------- */
@@ -785,8 +845,7 @@ footer{background:var(--navy-deep);padding:70px 0 34px;color:rgba(255,255,255,.5
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZZG83CK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZZG83CK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="page">
   <a href="#main" class="skip-link">Zum Inhalt springen</a>
@@ -808,6 +867,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="navlinks">
           <a href="#startseite">Startseite</a>
           <a href="#leistungen">Leistungen</a>
+          <a href="/digitale-produkte/">Digitale Produkte</a>
           <a href="#branchen">Branchen</a>
           <a href="#zusammenarbeit">Zusammenarbeit</a>
           <a href="#ueber-uns">Über uns</a>
@@ -822,6 +882,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="mobile-nav" id="mobileNav">
     <a href="#startseite">Startseite</a>
     <a href="#leistungen">Leistungen</a>
+    <a href="/digitale-produkte/">Digitale Produkte</a>
     <a href="#branchen">Branchen</a>
     <a href="#zusammenarbeit">Zusammenarbeit</a>
     <a href="#ueber-uns">Über uns</a>
@@ -833,10 +894,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid-lines" aria-hidden="true"></div>
     <div class="hero-network" aria-hidden="true">
       <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
-        <path class="ln" d="M120,680 C320,560 480,610 620,480 S900,380 1100,260"/>
-        <path class="ln gold dash" d="M80,320 C280,420 460,300 660,380 S980,520 1320,460"/>
+        <path id="heroPath1" class="ln" d="M120,680 C320,560 480,610 620,480 S900,380 1100,260"/>
+        <path id="heroPath2" class="ln gold dash" d="M80,320 C280,420 460,300 660,380 S980,520 1320,460"/>
         <path class="ln" d="M200,120 C380,240 560,160 760,280 S1120,340 1300,200"/>
-        <path class="ln gold dash" d="M0,520 C180,480 360,560 540,500 S860,420 1050,520 S1260,620 1400,560" style="animation-delay:-4s"/>
+        <path id="heroPath3" class="ln gold dash" d="M0,520 C180,480 360,560 540,500 S860,420 1050,520 S1260,620 1400,560" style="animation-delay:-4s"/>
         <path class="ln" d="M1400,120 C1180,200 1020,140 860,220 S540,300 360,180"/>
         <circle class="nd pulse" cx="620" cy="480" r="3"/>
         <circle class="nd gold pulse" cx="900" cy="380" r="3.5" style="animation-delay:.6s"/>
@@ -848,6 +909,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <circle class="nd pulse" cx="1050" cy="520" r="3" style="animation-delay:2.1s"/>
         <circle class="nd gold pulse" cx="360" cy="560" r="3.5" style="animation-delay:1.5s"/>
         <circle class="nd-ring" cx="360" cy="560" r="4" style="animation-delay:1.5s"/>
+        <circle class="nd-spark" r="3.4">
+          <animateMotion dur="7s" repeatCount="indefinite"><mpath href="#heroPath1"/></animateMotion>
+        </circle>
+        <circle class="nd-spark" r="2.8">
+          <animateMotion dur="8.5s" begin="-2.5s" repeatCount="indefinite"><mpath href="#heroPath2"/></animateMotion>
+        </circle>
+        <circle class="nd-spark" r="2.8">
+          <animateMotion dur="9.5s" begin="-5s" repeatCount="indefinite"><mpath href="#heroPath3"/></animateMotion>
+        </circle>
       </svg>
     </div>
 
@@ -858,8 +928,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-location reveal visible" style="transition-delay:.2s">Aus Liechtenstein. Für die Schweiz, Deutschland und Österreich.</div>
 
       <div class="hero-statement reveal visible" style="transition-delay:.26s">
-        <span class="hero-statement-mark">&ldquo;</span>
-        Beständiger Erfolg entsteht nicht durch Aktivität, sondern durch Architektur.
+        <span class="hero-statement-bar" aria-hidden="true"></span>
+        <span class="hero-statement-mark" aria-hidden="true">&ldquo;</span>
+        <span class="hero-statement-text">Beständiger Erfolg entsteht nicht durch Aktivität, sondern durch Architektur.</span>
       </div>
 
       <div class="hero-actions reveal visible" style="transition-delay:.3s">
@@ -879,102 +950,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="hero-flow-arrow">&rarr;</span>
         <div class="hero-flow-step" data-step="3"><i></i>Wachstum</div>
       </div>
+
+      <div class="pv-glow pv-glow-a" aria-hidden="true"></div>
+      <div class="pv-glow pv-glow-b" aria-hidden="true"></div>
+      <div class="pv-stage reveal" id="pvStage" style="transition-delay:.1s">
+        <div class="pv-parallax" id="pvParallax">
+          <div class="pv-laptop">
+            <div class="pv-laptop-screen">
+              <div class="pv-screen-topbar">
+                <span></span><span></span><span></span>
+                <div class="pv-screen-title">Esche System &middot; Übersicht</div>
+                <span class="pv-live-badge"><i></i>Live</span>
+                <span style="flex:1"></span>
+              </div>
+              <div class="pv-screen-body">
+                <div class="pv-kpi-row">
+                  <div class="pv-kpi">
+                    <span class="pv-kpi-label">Leads</span>
+                    <span class="pv-kpi-value"><b class="pv-count" data-target="128">0</b><i class="pv-kpi-trend up">+24%</i></span>
+                    <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,26 L18,22 L36,24 L54,14 L72,16 L100,4"/></svg>
+                  </div>
+                  <div class="pv-kpi">
+                    <span class="pv-kpi-label">Pipeline</span>
+                    <span class="pv-kpi-value"><b class="pv-count" data-target="64">0</b><i class="pv-kpi-trend up">+18%</i></span>
+                    <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,24 L20,20 L40,21 L60,10 L80,13 L100,6"/></svg>
+                  </div>
+                  <div class="pv-kpi">
+                    <span class="pv-kpi-label">Automatisierung</span>
+                    <span class="pv-kpi-value"><b class="pv-count" data-target="86" data-suffix="%">0</b><i class="pv-kpi-trend up">+9%</i></span>
+                    <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,18 L20,17 L40,12 L60,13 L80,9 L100,8"/></svg>
+                  </div>
+                  <div class="pv-kpi">
+                    <span class="pv-kpi-label">Conversion</span>
+                    <span class="pv-kpi-value"><b class="pv-count" data-target="32" data-suffix="%">0</b><i class="pv-kpi-trend up">+6%</i></span>
+                    <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,22 L20,21 L40,19 L60,15 L80,11 L100,7"/></svg>
+                  </div>
+                </div>
+
+                <div class="pv-chart-wrap">
+                  <div class="pv-chart-label-row">
+                    <span class="pv-chart-legend"><span><i class="pv-dotkey gold"></i>Leads</span><span><i class="pv-dotkey"></i>Umsatz</span></span>
+                    <span class="pv-chart-callout">+68% ggü. Vorquartal</span>
+                  </div>
+                  <svg class="pv-chart" viewBox="0 0 560 190" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="pvFillGold" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#B39A70" stop-opacity=".38"/>
+                        <stop offset="100%" stop-color="#B39A70" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="pvFillLine" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#9DB2D6" stop-opacity=".28"/>
+                        <stop offset="100%" stop-color="#9DB2D6" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <g class="pv-grid">
+                      <line x1="0" y1="35" x2="560" y2="35"></line>
+                      <line x1="0" y1="85" x2="560" y2="85"></line>
+                      <line x1="0" y1="135" x2="560" y2="135"></line>
+                      <line x1="0" y1="185" x2="560" y2="185"></line>
+                    </g>
+                    <path class="pv-area" d="M0,145 C70,138 120,112 180,108 C250,102 300,76 360,66 C420,56 480,40 560,24 L560,190 L0,190 Z" fill="url(#pvFillLine)"></path>
+                    <path class="pv-line pv-line-soft" d="M0,145 C70,138 120,112 180,108 C250,102 300,76 360,66 C420,56 480,40 560,24" fill="none"></path>
+                    <path class="pv-area" d="M0,172 C80,170 140,158 200,144 C270,128 320,98 380,80 C440,61 500,47 560,33 L560,190 L0,190 Z" fill="url(#pvFillGold)"></path>
+                    <path class="pv-line pv-line-gold" d="M0,172 C80,170 140,158 200,144 C270,128 320,98 380,80 C440,61 500,47 560,33" fill="none"></path>
+                    <circle class="pv-dot" r="4.5" cx="560" cy="33"></circle>
+                    <g class="pv-chart-axis">
+                      <text x="2" y="183">Jan</text><text x="95" y="183">Feb</text><text x="188" y="183">Mrz</text>
+                      <text x="281" y="183">Apr</text><text x="374" y="183">Mai</text><text x="558" y="183" text-anchor="end">Jun</text>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="pv-rows">
+                  <div class="pv-row"><span class="pv-row-dot"></span>Neue Anfrage automatisch qualifiziert</div>
+                  <div class="pv-row"><span class="pv-row-dot"></span>Follow-up-Sequenz ausgelöst</div>
+                  <div class="pv-row"><span class="pv-row-dot gold"></span>Angebot erstellt &amp; versendet</div>
+                  <div class="pv-row"><span class="pv-row-dot"></span>Reporting automatisch aktualisiert</div>
+                </div>
+              </div>
+            </div>
+            <div class="pv-laptop-base"><span></span></div>
+          </div>
+
+          <div class="pv-phone">
+            <div class="pv-phone-notch"></div>
+            <div class="pv-phone-screen">
+              <div class="pv-phone-header">
+                <div class="pv-phone-avatar"></div>
+                <div class="pv-phone-headtext"><b>CRM Mobile</b><span>Live synchronisiert</span></div>
+              </div>
+              <div class="pv-phone-card">
+                <div class="pv-phone-card-top"><span>Kontakt</span><span class="pv-phone-dot"></span></div>
+                <div class="pv-phone-card-name">Neue Anfrage</div>
+              </div>
+              <div class="pv-phone-card">
+                <div class="pv-phone-card-top"><span>Aufgabe</span><span class="pv-phone-dot gold"></span></div>
+                <div class="pv-phone-card-name">Rückruf einplanen</div>
+              </div>
+              <div class="pv-phone-card">
+                <div class="pv-phone-card-top"><span>Termin</span><span class="pv-phone-dot"></span></div>
+                <div class="pv-phone-card-name">Kundengespräch 14:30</div>
+              </div>
+              <div class="pv-phone-bar"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pv-caption reveal" style="transition-delay:.2s">Illustrative Darstellung &middot; verbundene Systeme für Vertrieb, Automatisierung und Reporting</p>
     </div>
 
     <div class="hero-scroll-cue" aria-hidden="true"><span>Entdecken</span><span class="line"></span></div>
-  </section>
-
-  <section class="sec product-vis on-navy-deep" id="systemvorschau" style="position:relative;overflow:hidden">
-    <div class="pv-glow pv-glow-a" aria-hidden="true"></div>
-    <div class="pv-glow pv-glow-b" aria-hidden="true"></div>
-    <div class="container" style="position:relative;z-index:1">
-      <div class="head-block center reveal">
-        <div class="eyebrow center">Ein System, kein Flickenteppich</div>
-        <h2 class="h2 on-dark">Ihre Vertriebs- und Prozessdaten, an einem Ort verbunden.</h2>
-      </div>
-
-      <div class="pv-stage reveal" style="transition-delay:.1s">
-        <div class="pv-laptop">
-          <div class="pv-laptop-screen">
-            <div class="pv-screen-topbar">
-              <span></span><span></span><span></span>
-              <div class="pv-screen-title">Esche System &middot; Übersicht</div>
-            </div>
-            <div class="pv-screen-body">
-              <div class="pv-kpi-row">
-                <div class="pv-kpi">
-                  <span class="pv-kpi-label">Leads</span>
-                  <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,26 L18,22 L36,24 L54,14 L72,16 L100,4"/></svg>
-                </div>
-                <div class="pv-kpi">
-                  <span class="pv-kpi-label">Pipeline</span>
-                  <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,24 L20,20 L40,21 L60,10 L80,13 L100,6"/></svg>
-                </div>
-                <div class="pv-kpi">
-                  <span class="pv-kpi-label">Automatisierung</span>
-                  <svg class="pv-spark" viewBox="0 0 100 32" preserveAspectRatio="none"><path d="M0,18 L20,17 L40,12 L60,13 L80,9 L100,8"/></svg>
-                </div>
-              </div>
-
-              <div class="pv-chart-wrap">
-                <div class="pv-chart-label-row"><span><i class="pv-dotkey gold"></i>Leads</span><span><i class="pv-dotkey"></i>Umsatz</span></div>
-                <svg class="pv-chart" viewBox="0 0 560 190" preserveAspectRatio="none" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="pvFillGold" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#B39A70" stop-opacity=".38"/>
-                      <stop offset="100%" stop-color="#B39A70" stop-opacity="0"/>
-                    </linearGradient>
-                    <linearGradient id="pvFillLine" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#9DB2D6" stop-opacity=".28"/>
-                      <stop offset="100%" stop-color="#9DB2D6" stop-opacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <g class="pv-grid">
-                    <line x1="0" y1="35" x2="560" y2="35"></line>
-                    <line x1="0" y1="85" x2="560" y2="85"></line>
-                    <line x1="0" y1="135" x2="560" y2="135"></line>
-                    <line x1="0" y1="185" x2="560" y2="185"></line>
-                  </g>
-                  <path class="pv-area" d="M0,145 C70,138 120,112 180,108 C250,102 300,76 360,66 C420,56 480,40 560,24 L560,190 L0,190 Z" fill="url(#pvFillLine)"></path>
-                  <path class="pv-line pv-line-soft" d="M0,145 C70,138 120,112 180,108 C250,102 300,76 360,66 C420,56 480,40 560,24" fill="none"></path>
-                  <path class="pv-area" d="M0,172 C80,170 140,158 200,144 C270,128 320,98 380,80 C440,61 500,47 560,33 L560,190 L0,190 Z" fill="url(#pvFillGold)"></path>
-                  <path class="pv-line pv-line-gold" d="M0,172 C80,170 140,158 200,144 C270,128 320,98 380,80 C440,61 500,47 560,33" fill="none"></path>
-                  <circle class="pv-dot" r="4.5" cx="560" cy="33"></circle>
-                </svg>
-              </div>
-
-              <div class="pv-rows">
-                <div class="pv-row"><span class="pv-row-dot"></span>Neue Anfrage automatisch qualifiziert</div>
-                <div class="pv-row"><span class="pv-row-dot"></span>Follow-up-Sequenz ausgelöst</div>
-                <div class="pv-row"><span class="pv-row-dot gold"></span>Angebot erstellt &amp; versendet</div>
-              </div>
-            </div>
-          </div>
-          <div class="pv-laptop-base"><span></span></div>
-        </div>
-
-        <div class="pv-phone">
-          <div class="pv-phone-notch"></div>
-          <div class="pv-phone-screen">
-            <div class="pv-phone-header">
-              <div class="pv-phone-avatar"></div>
-              <div class="pv-phone-headtext"><b>CRM Mobile</b><span>Live synchronisiert</span></div>
-            </div>
-            <div class="pv-phone-card">
-              <div class="pv-phone-card-top"><span>Kontakt</span><span class="pv-phone-dot"></span></div>
-              <div class="pv-phone-card-name">Neue Anfrage</div>
-            </div>
-            <div class="pv-phone-card">
-              <div class="pv-phone-card-top"><span>Aufgabe</span><span class="pv-phone-dot gold"></span></div>
-              <div class="pv-phone-card-name">Rückruf einplanen</div>
-            </div>
-            <div class="pv-phone-bar"><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-        </div>
-      </div>
-
-      <p class="pv-caption reveal" style="transition-delay:.2s">Illustrative Darstellung &middot; verbundene Systeme für Vertrieb, Automatisierung und Reporting</p>
-    </div>
   </section>
 
   <section class="sec on-white" id="ansatz" style="position:relative;overflow:hidden">
@@ -1430,61 +1515,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="sec-tight on-light" id="projekte" style="position:relative;overflow:hidden">
-    <div class="sec-glow a" aria-hidden="true"></div>
-    <div class="sec-glow b" aria-hidden="true"></div>
-    <div class="container" style="position:relative;z-index:1">
-      <div class="head-block reveal">
-        <div class="eyebrow">Projekte, hinter denen wir stehen</div>
-        <h2 class="h2">Eigene digitale Plattformen &ndash; live in der Schweiz, in Deutschland und in &Ouml;sterreich.</h2>
-        <p class="lede proj-intro" style="margin-top:22px">Eine Auswahl eigener und mitentwickelter Portale und Plattformen, die wir konzipiert, gebaut und online gebracht haben.</p>
-      </div>
-
-      <div class="proj-cat reveal"><h4>Versicherung &amp; Vorsorge</h4></div>
-      <div class="proj-grid reveal-stagger">
-        <a class="proj-chip reveal" href="https://ohneberater.ch" target="_blank" rel="noopener"><span class="proj-name">ohneberater.ch</span><span class="proj-tag">Kontaktservice f&uuml;r Versicherte ohne erreichbaren Berater</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://unbetreute-police.ch" target="_blank" rel="noopener"><span class="proj-name">unbetreute-police.ch</span><span class="proj-tag">F&uuml;r Kunden mit nicht mehr erreichbarem Lebensversicherungsberater</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://versicherungsberater-wechseln.ch" target="_blank" rel="noopener"><span class="proj-name">versicherungsberater-wechseln.ch</span><span class="proj-tag">Beraterwechsel ohne K&uuml;ndigung der bestehenden Police</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://beraterwechsel.ch" target="_blank" rel="noopener"><span class="proj-name">beraterwechsel.ch</span><span class="proj-tag">Wechselservice f&uuml;r Versicherungsberater</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://www.praemienpilot.ch" target="_blank" rel="noopener"><span class="proj-name">praemienpilot.ch</span><span class="proj-tag">Krankenkassenpr&auml;mien vergleichen</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://altersvorsorgedepotportal.de" target="_blank" rel="noopener"><span class="proj-name">altersvorsorgedepotportal.de</span><span class="proj-tag">Informationsportal &amp; Rechner zum Altersvorsorgedepot (Deutschland)</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://www.fipla.ch" target="_blank" rel="noopener"><span class="proj-name">fipla.ch</span><span class="proj-tag">Unabh&auml;ngige Beratung zu Versicherung, Finanzen, Vorsorge und Steuern</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://wertenburg.ch" target="_blank" rel="noopener"><span class="proj-name">wertenburg.ch</span><span class="proj-tag">Versicherungsmakler, Vaduz</span><span class="proj-arrow">&rarr;</span></a>
-      </div>
-
-      <div class="proj-cat reveal"><h4>Finanzierung &amp; Kredit</h4></div>
-      <div class="proj-grid reveal-stagger">
-        <a class="proj-chip reveal" href="https://kreditguide.ch" target="_blank" rel="noopener"><span class="proj-name">kreditguide.ch</span><span class="proj-tag">Online-Kreditvoranfrage, Brokers AG Schweiz</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://kreditprofis.ch" target="_blank" rel="noopener"><span class="proj-name">kreditprofis.ch</span><span class="proj-tag">Kreditvermittlung, Brokers AG Schweiz</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://kreditberater24.ch" target="_blank" rel="noopener"><span class="proj-name">kreditberater24.ch</span><span class="proj-tag">Kostenlose Kreditberatung, CHF 5&prime;000&ndash;300&prime;000</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://schweizerkreditberatung.ch" target="_blank" rel="noopener"><span class="proj-name">schweizerkreditberatung.ch</span><span class="proj-tag">Eigenes Projekt</span><span class="proj-arrow">&rarr;</span></a>
-      </div>
-
-      <div class="proj-cat reveal"><h4>Leadgenerierung &amp; Vertrieb</h4></div>
-      <div class="proj-grid reveal-stagger">
-        <a class="proj-chip reveal" href="https://vertriebsportal.ch" target="_blank" rel="noopener"><span class="proj-name">vertriebsportal.ch</span><span class="proj-tag">Vertriebsplattform mit Kampagnen, Leadqualifizierung &amp; Dashboard</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://auftragdeal.ch" target="_blank" rel="noopener"><span class="proj-name">auftragdeal.ch</span><span class="proj-tag">B2B-Auftragsplattform f&uuml;r Schweizer KMU &amp; Dienstleister</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://umzugdeal.ch" target="_blank" rel="noopener"><span class="proj-name">umzugdeal.ch</span><span class="proj-tag">Offerten-Portal f&uuml;r Umzugsfirmen</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://malerdeal.ch" target="_blank" rel="noopener"><span class="proj-name">malerdeal.ch</span><span class="proj-tag">Offerten-Portal f&uuml;r Malerbetriebe</span><span class="proj-arrow">&rarr;</span></a>
-      </div>
-
-      <div class="proj-cat reveal"><h4>Immobilien &amp; Investment</h4></div>
-      <div class="proj-grid reveal-stagger">
-        <a class="proj-chip reveal" href="https://beyelerimmobilien.ch" target="_blank" rel="noopener"><span class="proj-name">beyelerimmobilien.ch</span><span class="proj-tag">Beyeler Immobilien AG &ndash; Immobilien &amp; Investments am Z&uuml;richsee</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://liegenschaftskapital.ch" target="_blank" rel="noopener"><span class="proj-name">liegenschaftskapital.ch</span><span class="proj-tag">Digitales Investmentportal f&uuml;r Schweizer Off-Market-Immobilienprojekte</span><span class="proj-arrow">&rarr;</span></a>
-      </div>
-
-      <div class="proj-cat reveal"><h4>Digitale Tools &amp; weitere Projekte</h4></div>
-      <div class="proj-grid reveal-stagger">
-        <a class="proj-chip reveal" href="https://dritivo.ch" target="_blank" rel="noopener"><span class="proj-name">dritivo.ch</span><span class="proj-tag">Digitale Plattformen &amp; IT-L&ouml;sungen f&uuml;r Marketing und Vertrieb</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://zahlvio.com" target="_blank" rel="noopener"><span class="proj-name">zahlvio.com</span><span class="proj-tag">Tool zur Rechnungserstellung</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://unternehmerfrauen.ch" target="_blank" rel="noopener"><span class="proj-name">unternehmerfrauen.ch</span><span class="proj-tag">Masterclasses f&uuml;r Frauen in Unternehmertum &amp; Beruf</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://www.lm-dienstleistungen.at" target="_blank" rel="noopener"><span class="proj-name">lm-dienstleistungen.at</span><span class="proj-tag">Eigenes Projekt (&Ouml;sterreich)</span><span class="proj-arrow">&rarr;</span></a>
-        <a class="proj-chip reveal" href="https://www.firmendatenbank.ch" target="_blank" rel="noopener"><span class="proj-name">firmendatenbank.ch</span><span class="proj-tag">Eigenes Projekt</span><span class="proj-arrow">&rarr;</span></a>
-      </div>
-    </div>
-  </section>
-
   <section class="sec on-light" id="ueber-uns" style="position:relative;overflow:hidden">
     <div class="sec-glow a" aria-hidden="true"></div>
     <div class="sec-glow b" aria-hidden="true"></div>
@@ -1726,9 +1756,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Navigation</h4>
           <a href="#startseite">Startseite</a>
           <a href="#leistungen">Leistungen</a>
+          <a href="/digitale-produkte/">Digitale Produkte</a>
           <a href="#branchen">Branchen</a>
           <a href="#zusammenarbeit">Zusammenarbeit</a>
-          <a href="#projekte">Projekte</a>
           <a href="#ueber-uns">Über uns</a>
         </div>
         <div class="footer-col">
@@ -1774,6 +1804,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }catch(e){}
 
+
+  // ---- Hero KPI count-up (illustrative dashboard numbers) ----
+  try{
+    var countEls = document.querySelectorAll(".pv-count[data-target]");
+    var reduceMotionCount = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(countEls.length){
+      var countObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(!entry.isIntersecting) return;
+          var el = entry.target;
+          var target = parseFloat(el.getAttribute("data-target")) || 0;
+          var suffix = el.getAttribute("data-suffix") || "";
+          countObserver.unobserve(el);
+          if(reduceMotionCount){
+            el.textContent = target + suffix;
+            return;
+          }
+          var dur = 1400;
+          var start = null;
+          function step(ts){
+            if(!start) start = ts;
+            var p = Math.min(1, (ts - start) / dur);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if(p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.4 });
+      countEls.forEach(function(el){ countObserver.observe(el); });
+    }
+  }catch(e){}
+
   // ---- Active nav link on scroll ----
   try{
     var sections = Array.prototype.slice.call(document.querySelectorAll("section[id]"));
@@ -1808,7 +1871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
     revealEls.forEach(function(el){ revealObserver.observe(el); });
   }catch(e){}
 
